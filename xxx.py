@@ -1,21 +1,36 @@
-import sys
-import subprocess
+import re
+import requests
+from xml.etree import ElementTree as ET
 
-# Get YouTube video URL from command-line argument
-url = sys.argv[1]
+def download_auto_generated_english_subtitles(video_link):
+    # Extract video ID from the video link
+    video_id = re.findall(r'(?<=v=)[^&#]+', video_link)
+    
+    if not video_id:
+        raise ValueError('Invalid YouTube video link')
+    
+    # Construct the subtitle URL
+    subtitle_url = "https://www.youtube.com/api/timedtext?lang=en&v=" + video_id[0] + "&fmt=srv3"
+    
+    # Send a GET request to fetch the data
+    response = requests.get(subtitle_url)
+    
+    if response.status_code != 200:
+        raise ValueError('Could not fetch subtitles')
+    
+    # Parse the XML response to extract the subtitle text
+    root = ET.fromstring(response.text)
+    subtitle_text = ""
+    
+    for child in root:
+        subtitle_text += child.text + " "
+    
+    return subtitle_text
 
-# Download English subtitles in SRT format using youtube-dl
-subprocess.run(["youtube-dl", "--write-sub", "--sub-lang", "en", "--convert-subs", "srt", "--skip-download", "--output", "%(title)s.%(ext)s", url])
+#To use this function, pass a valid YouTube video link to it:
 
-# Convert SRT file to plain text using srt2txt
-# Read SRT file and extract English subtitles
-with open("video_title.en.srt", "r") as srt_file:
-    lines = srt_file.readlines()
-    subtitles = [line.strip() for line in lines if line.strip().isdigit() == False]
 
-# Save English subtitles to plain text file
-with open("video_title.en.txt", "w") as txt_file:
-    txt_file.write("\n".join(subtitles))
-
-print("Subtitles downloaded and converted to plain text!")
+video_link = "https://www.youtube.com/watch?v=Hc20D8FUdgA"
+subtitle_text = download_auto_generated_english_subtitles(video_link)
+print(subtitle_text)
 
