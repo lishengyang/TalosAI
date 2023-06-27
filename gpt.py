@@ -1,7 +1,5 @@
 import openai
-#openai.api_key = "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"
-openai.api_key = "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"
-#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 
+openai.api_key = "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"
 
 messages = [
     {"role": "system", "content": "You are a kind helpful assistant."},
