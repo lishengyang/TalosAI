@@ -1,0 +1,26 @@
+python
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)  # Using BCM numbering for GPIO pins
+
+# Set up GPIO pin 18 for PWM output
+GPIO.setup(18, GPIO.OUT)
+pwm = GPIO.PWM(18, 100)  # Set frequency to 100 Hz
+
+# Duty cycle ranges from 0 (off) to 100 (fully on)
+dc_min = 0
+dc_max = 100
+
+# Generate PWM with increasing duty cycle, then decreasing duty cycle
+while True:
+    for dc in range(dc_min, dc_max + 1):
+        pwm.ChangeDutyCycle(dc)
+        time.sleep(0.01)
+    for dc in range(dc_max, dc_min - 1, -1):
+        pwm.ChangeDutyCycle(dc)
+        time.sleep(0.01)
+
+# Cleanup GPIO pins when done
+pwm.stop()
+GPIO.cleanup()

@@ -1,0 +1,5 @@
+1. Connect your Raspberry Pi 4 board with a suitable power supply and other peripherals as necessary.
+
+2. Open up a terminal on the Raspberry Pi by navigating to the desktop and pressing "Ctrl + Alt + T" or by opening "Terminal" from the applications menu.
+
+3. Install Python3 and the necessary packages for PWM control by running the following command in the terminal:
