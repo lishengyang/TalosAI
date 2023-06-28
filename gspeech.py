@@ -1,10 +1,10 @@
 import io
 from google.cloud import speech_v1p1beta1 as speech
 import os
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/home/orangepi/arcane-atom-257306-cd221017999a.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/home/user/arcane-atom-257306-cd221017999a.json'
 client = speech.SpeechClient()
 
-file_name = '/home/orangepi/welcome.wav'
+file_name = '/home/user/home/welcome.wav'
 
 with io.open(file_name, 'rb') as f:
     content = f.read()

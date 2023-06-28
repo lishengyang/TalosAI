@@ -8,7 +8,7 @@ openai.api_key = "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"
 
 def speak(text):
     with BytesIO() as file:
-        tts = gTTS(text=text, lang='en')
+        tts = gTTS(text=text, lang='zh-CN')
         tts.write_to_fp(file)
         file.seek(0)
         pygame.mixer.init()
@@ -24,7 +24,7 @@ def listen():
         r.adjust_for_ambient_noise(source)
         audio = r.listen(source)
     try:
-        text = r.recognize_google(audio)
+        text = r.recognize_google(audio,language='zh-CN')
         print("You said: " + text)
         return text
     except Exception as e:

@@ -5,7 +5,9 @@ import pygame
 import speech_recognition as sr
 
 openai.api_key = "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"
-
+messages = [
+    {"role": "system", "content": "You are a kind helpful assistant."},
+]
 def speak(text):
     with BytesIO() as file:
         tts = gTTS(text=text, lang='en')
@@ -31,17 +33,18 @@ def listen():
         print("Error: " + str(e))
         return ""
 
-def generate_answer(prompt):
-    completions = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=prompt,
-        max_tokens=2048,
-        n=1,
-        stop=None,
-        temperature=0.7
+def generate_answer(message):
+    if message:
+        messages.append(
+            {"role": "user", "content": message},
+        )
+    chat = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=messages
     )
-    message = completions.choices[0].text.strip()
-    return message
+    reply = chat.choices[0].message.content
+    return reply
+
 
 if __name__ == '__main__':
     while True:

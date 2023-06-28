@@ -2,7 +2,7 @@ import speech_recognition as sr
 from google.cloud import speech_v1p1beta1 as speech
 import os
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/home/orangepi/arcane-atom-257306-cd221017999a.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/home/user/arcane-atom-257306-cd221017999a.json'
 # create a recognizer object
 r = sr.Recognizer()
 
@@ -16,7 +16,7 @@ with sr.Microphone() as source:
 
 config = speech.RecognitionConfig(
     encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
-    sample_rate_hertz=44100,
+    sample_rate_hertz=48000,
     language_code="en-US",
 )
 
