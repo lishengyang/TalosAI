@@ -103,3 +103,103 @@ ai讲解内容时候自动配上视频百科的内容，或link []
 （ai关键字视频关联）
 
 嵌入式模块自动化编程
+
+-------------------------------------------------
+EN
+English translation:
+
+Six microphone scheme
+
+Add touch display and human-machine interface to chatgpt
+
+Automatic camera [] 
+
+Retrieve specific pictures/people/objects/text from folders [] [x] [x]
+
+Record temperature, humidity, air pressure, pm2.5 to csv.
+
+Camera detects faces and triggers alerts []
+
+Mp3 loop playlist playback/autos detect and play USB drive []
+
+Voice command navigation, block all voice commands except one [x]
+
+Record video [] [x]
+
+Chat generates store list []  
+
+Generate prompts for fitness timing reminders [] [x]  
+
+QR code recognition [] [x] Send through SMS i mesaage.
+
+Make a website that monitors temp and cpu mem etc [...] [x]
+
+Object recognition [x] []
+
+Simple NAS/automatic backup to USB drives/automatic folder classification [] [x] []
+
+Voice prompt after backup is complete - whether to play
+
+Serial to USB, USB printer, Bluetooth mini printer
+
+Generate readings of famous quotes [x] [] 
+
+Weather forecast plus latest movie releases [x] []
+
+Receipt/QR code OCR camera saves to csv automatic table accounting []
+
+Multiple robots simulate different personalities talking to each other
+
+Get YouTube subtitles and do a summary abstract essay [x] []
+
+Generic temperature control closed loop - digital output - serial input output - sensor input [] 
+
+MIDI sing song generator [] []
+
+Add GPT speakers to traditional IoT devices
+
+Generate a program that automatically occupies a certain % of CPU, and closes itself after reaching target temp [x] []  
+
+Scan code voice prompt rename 
+
+Display photos taken on a webpage server for external access to see latest photos (auto timed photos saving names modified by time) 
+
+Build a simple interactive server [x] []
+
+Another server controls host webpage via TCP for remote hardware IO control [x] [] []
+
+Motherboard communicates with Bluetooth, WiFi devices - build home automation through Bluetooth or wifi to turn on/off sub devices
+
+Build zigbee sub network, supports 1 to many communication protocol 
+
+Custom serial protocol for communication between host and MCU [x]
+
+Build a general purpose SPI IIC middleware supporting multiple sensor types 
+
+Compress and encrypt files, auto rename [x] []
+
+Image CV and OCR [] [x] 
+
+Have AI design a game for it to play with user according to guidance to configure units and roles []
+
+Build VPS server website, use website external IP to directly access Raspberry Pi host with 4G hotspot, collect real-time video stream from Raspberry Pi camera, access internal network video push from external network, camera video stream []
+
+AI electronic picture frame, randomly displays wallpapers generated from randomly generated classical poems, need LCD screen
+
+AI automatic program generation modules [x] 
+
+TCP/IP test, compare latency of TCP, UDP in C language and Python [x]
+
+Learn mmap
+
+Learn vfs, file type, file IO performance test, 4k read write test, IO speed test 
+
+Like an open world game, use GPT and hardware peripherals, system resources to develop various apps to realize own imagination. Use as many new peripherals as possible to improve platform expandability and playability.
+
+Identify webpage functions and modules source code, analyze and turn into usable code.  
+
+AI explains content and automatically links relevant videos from video encyclopedia or link []
+
+(AI associates videos with keywords)
+
+Embedded module automation programming
